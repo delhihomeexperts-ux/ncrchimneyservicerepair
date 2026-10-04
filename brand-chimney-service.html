@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="t">Brand Chimney Service</title>
-<meta name="description" id="d" content="Brand Chimney Service">
-<meta name="keywords" id="k" content="chimney service">
+<title id="t">Chimney Service</title>
+<meta name="description" id="d" content="">
+<meta name="keywords" id="k" content="">
 <script>
 const brands={"faber":"Faber","elica":"Elica","hindware":"Hindware","glen":"Glen","kaff":"Kaff","sunflame":"Sunflame","kutchina":"Kutchina","bosch":"Bosch","blowhot":"BlowHot","siemens":"Siemens"};
 const locs={
@@ -13,27 +13,69 @@ const locs={
 "noida-sec-18":"Noida Sector 18","noida-sec-19":"Noida Sector 19","noida-sec-27":"Noida Sector 27 Atta","noida-sec-50":"Noida Sector 50","noida-sec-51":"Noida Sector 51","noida-sec-62":"Noida Sector 62","noida-sec-63":"Noida Sector 63","noida-sec-75":"Noida Sector 75","noida-sec-76":"Noida Sector 76","noida-sec-78":"Noida Sector 78","noida-sec-100":"Noida Sector 100","noida-sec-110":"Noida Sector 110","noida-sec-120":"Noida Sector 120","noida-sec-128":"Noida Sector 128 Jaypee","noida-sec-150":"Noida Sector 150","noida-sec-168":"Noida Sector 168","botanical-garden":"Botanical Garden Noida","gaur-city":"Gaur City Noida","noida-extension":"Noida Extension","greater-noida":"Greater Noida",
 "indirapuram":"Indirapuram Ghaziabad","vaishali":"Vaishali Ghaziabad","kaushambi":"Kaushambi Ghaziabad","vasundhara":"Vasundhara Ghaziabad","crossings-republik":"Crossings Republik Ghaziabad","raj-nagar":"Raj Nagar Ghaziabad","raj-nagar-ext":"Raj Nagar Extension Ghaziabad","kavi-nagar":"Kavi Nagar Ghaziabad","shastri-nagar":"Shastri Nagar Ghaziabad","govindpuram":"Govindpuram Ghaziabad","mohan-nagar":"Mohan Nagar Ghaziabad","loni":"Loni Ghaziabad"
 };
+
+// PSEO SPIN DATA - har page alag banega
+const problems=["motor not working","suction low","auto clean not working","noise issue","oil leaking","speed not working","light not working","filter jam","PCB fault","switch not working"];
+const services=["repair","cleaning","deep cleaning","installation","motor replacement","filter replacement","ducting","servicing"];
+const spins=["24x7 Available","30 Min Response","Same Day Fix","Expert Technician","Affordable Price","90 Days Warranty"];
+
+function hash(s){let h=0;for(let i=0;i<s.length;i++){h=(h*31+s.charCodeAt(i))%1000}return h;}
+
 function load(){
 let p=new URLSearchParams(window.location.search);
 let b=p.get('brand')||'faber';
 let a=p.get('area')||'gk1';
 let bName=brands[b]||b;
 let lName=locs[a]||a.replace(/-/g,' ');
-document.getElementById('t').innerText=`${bName} Chimney Service in ${lName} - Repair @399 | 30 Min`;
-document.getElementById('d').setAttribute('content',`Best ${bName} Chimney Service in ${lName}. South Delhi Posh + All Noida + All Ghaziabad. 30 Min @399.`);
-document.getElementById('k').setAttribute('content',`${b} chimney repair ${lName}, ${b} chimney service ${lName}, ${bName} chimney service centre ${lName}`);
-document.getElementById('h').innerText=`${bName} Chimney Service in ${lName}`;
-document.getElementById('b1').innerText=bName;
-document.getElementById('l1').innerText=lName;
+let h=hash(b+a);
+
+let prob1=problems[h%problems.length];
+let prob2=problems[(h+3)%problems.length];
+let serv1=services[h%services.length];
+let serv2=services[(h+2)%services.length];
+let spin1=spins[h%spins.length];
+let spin2=spins[(h+1)%spins.length];
+
+document.getElementById('t').innerText=`${bName} Chimney ${serv1} in ${lName} | ${prob1} Fix @399 | ${spin1}`;
+document.getElementById('d').setAttribute('content',`Independent ${bName} chimney ${serv1} in ${lName}. Expert for ${bName} chimney ${prob1}, ${bName} chimney ${prob2}. ${spin1} in ${lName}. Repair @399 Cleaning @499. Call Local Technician.`);
+document.getElementById('k').setAttribute('content',`${b} chimney ${serv1} ${lName}, ${b} chimney ${prob1} repair ${lName}, ${bName} chimney ${serv2} ${lName}, ${bName.toLowerCase()} kitchen chimney technician ${lName}, chimney repair near ${lName}, chimney cleaning near ${lName}, ${b} chimney mechanic ${lName}`);
+
+document.getElementById('h').innerText=`${bName} Chimney ${serv1.charAt(0).toUpperCase()+serv1.slice(1)} in ${lName}`;
+document.getElementById('c1').innerText=`Independent local expert for ${bName} chimney in ${lName}. We fix ${bName} chimney ${prob1} and ${bName} chimney ${prob2} in ${lName} within 30 minutes. ${spin1} service in ${lName}.`;
+document.getElementById('c2').innerText=`Best ${bName} Chimney Repair in ${lName} - Motor, PCB, Sensor, Switch Repair for ${bName} chimney. Suction problem solution in ${lName}.`;
+document.getElementById('c3').innerText=`${bName} Chimney Cleaning Service in ${lName} - Deep oil grease cleaning, filter cleaning, auto clean repair. Increase suction power in ${lName}.`;
+document.getElementById('c4').innerText=`Why Choose Us in ${lName}? ${spin1}, ${spin2}, Low Price @399, 90 Days Warranty on ${bName} chimney service in ${lName}. 1000+ Happy Customers in ${lName}.`;
+document.getElementById('faq1').innerText=`Q: ${bName} Chimney ${prob1} in ${lName} ka charge kya hai?`;
+document.getElementById('ans1').innerText=`A: ${bName} Chimney ${prob1} repair in ${lName} sirf @399 se start hai. ${spin1}.`;
+document.getElementById('dis').innerText=`Disclaimer: Independent service for ${bName} chimney in ${lName}. Not authorized by ${bName}. Local repair service in ${lName}.`;
+document.getElementById('loc').innerText=lName;
+document.getElementById('brand').innerText=bName;
 }
 </script>
-<style>body{margin:0;background:black;color:white;font-family:Arial;text-align:center}h1{color:gold;text-shadow:0 0 15px gold}.box{background:#0f172a;margin:12px;padding:15px;border-radius:12px;border:1px solid gold}.btn{background:gold;color:black;padding:14px 28px;border-radius:30px;font-weight:bold}</style>
+<style>body{margin:0;background:#020617;color:white;font-family:Arial;padding:10px}h1{color:gold;text-shadow:0 0 10px gold;font-size:24px}.box{background:#0f172a;padding:15px;border-radius:12px;border:1px solid #334155;margin:10px 0;text-align:left}.btn{background:gold;color:black;padding:14px 28px;border-radius:30px;font-weight:bold;border:none;width:90%}.dis{font-size:11px;color:#94a3b8;border-top:1px solid #334155;padding:8px}.tag{display:inline-block;background:#1e293b;padding:5px 10px;border-radius:20px;margin:3px;font-size:12px;border:1px solid #475569}</style>
 </head>
 <body onload="load()">
 <h1 id="h">Loading...</h1>
-<p><b id="b1"></b> Expert in <b id="l1"></b> - 30 Min Service</p>
-<div class="box"><p>✅ South Delhi Posh FULL + ✅ Noida SARE Sec + ✅ Ghaziabad SARE Areas Cover</p><p>Repair @399 | Cleaning @499</p></div>
-<a href="tel:9876543210"><button class="btn">CALL 9876543210</button></a>
-<br><br><a href="index.html" style="color:cyan">Home</a>
+<p>Local Expert in <b id="loc"></b> for <b id="brand"></b></p>
+
+<div class="box">
+<p id="c1"></p>
+<p id="c2"></p>
+<p id="c3"></p>
+<p id="c4"></p>
+<div>
+<span class="tag" id="t1">30 Min Service</span><span class="tag">Repair @399</span><span class="tag">Cleaning @499</span><span class="tag">90 Days Warranty</span>
+</div>
+</div>
+
+<div class="box">
+<h3 style="color:#00ffcc" id="faq1"></h3>
+<p id="ans1"></p>
+</div>
+
+<a href="tel:9876543210"><button class="btn">📞 CALL LOCAL EXPERT - 9876543210</button></a>
+
+<div class="dis" id="dis"></div>
+<br><a href="index.html" style="color:cyan">← Home</a>
 </body>
 </html>
