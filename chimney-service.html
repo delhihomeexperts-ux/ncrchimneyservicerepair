@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title id="seo-title">Chimney Service - Loading...</title>
+<meta name="description" id="seo-desc" content="Chimney Service">
+<script>
+const locations = {
+"malviya-nagar": "Malviya Nagar, South Delhi",
+"gk1": "Greater Kailash 1, South Delhi",
+"gk2": "Greater Kailash 2, South Delhi",
+"defence-colony": "Defence Colony, South Delhi",
+"saket": "Saket, South Delhi",
+"vasant-kunj": "Vasant Kunj, South Delhi",
+"noida-sec-18": "Noida Sector 18",
+"noida-sec-50": "Noida Sector 50",
+"noida-sec-150": "Noida Sector 150 - Jaypee Greens",
+"gaur-city": "Gaur City, Noida",
+"indirapuram": "Indirapuram, Ghaziabad",
+"vaishali": "Vaishali, Ghaziabad",
+"raj-nagar": "Raj Nagar, Ghaziabad"
+};
+
+function loadLocation(){
+  const urlParams = new URLSearchParams(window.location.search);
+  let loc = urlParams.get('area') || 'malviya-nagar';
+  let locName = locations[loc] || loc.replace(/-/g, ' ');
+
+  document.getElementById('seo-title').innerText = `Chimney Repair in ${locName} - Faber Elica Service @399 | 30 Min`;
+  document.getElementById('seo-desc').setAttribute('content', `Best Chimney Service in ${locName}. Repair, Cleaning, Installation. 30 Min Service. Call Now.`);
+  document.getElementById('main-h1').innerText = `Chimney Repair in ${locName} - 30 Min VIP Service`;
+  document.getElementById('main-p').innerText = `We provide Faber, Elica, Hindware, Glen service in ${locName}. Suction, Sound, Oil Leakage fix @399.`;
+  document.getElementById('keyword-list').innerText = `chimney repair ${locName}, chimney service ${locName}, faber chimney repair ${locName}`;
+}
+</script>
+<style>body{background:black;color:white;font-family:Arial;text-align:center;padding:20px}button{background:cyan;padding:15px 30px;border-radius:30px;font-weight:bold}</style>
+</head>
+<body onload="loadLocation()">
+<h1 id="main-h1" style="color:cyan">Loading...</h1>
+<p id="main-p"></p>
+<p style="color:gold">✅ 30 Min Service | ✅ All Brands | ✅ @399 Starting</p>
+<p id="keyword-list" style="opacity:0.3;font-size:10px"></p>
+<a href="tel:9876543210"><button>CALL NOW - 9876543210</button></a>
+<br><br>
+<div style="font-size:12px">
+<a href="?area=malviya-nagar" style="color:cyan">Malviya Nagar</a> |
+<a href="?area=gk1" style="color:cyan">GK1</a> |
+<a href="?area=noida-sec-18" style="color:cyan">Noida Sec 18</a> |
+<a href="?area=indirapuram" style="color:cyan">Indirapuram</a>
+</div>
+</body>
+</html>
