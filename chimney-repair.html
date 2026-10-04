@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="seo-title">Chimney Repair - Loading...</title>
+<meta name="description" id="seo-desc" content="Chimney Repair">
+<meta name="keywords" id="seo-key" content="chimney repair">
+<script>
+const locations = {
+"malviya-nagar": "Malviya Nagar",
+"gk1": "GK-1 Greater Kailash 1",
+"gk2": "GK-2 Greater Kailash 2",
+"defence-colony": "Defence Colony",
+"saket": "Saket",
+"vasant-kunj": "Vasant Kunj",
+"vasant-vihar": "Vasant Vihar",
+"hauz-khas": "Hauz Khas",
+"green-park": "Green Park",
+"lajpat-nagar": "Lajpat Nagar",
+"noida-sec-18": "Noida Sector 18",
+"noida-sec-50": "Noida Sector 50",
+"noida-sec-62": "Noida Sector 62",
+"noida-sec-150": "Noida Sector 150 Jaypee Greens",
+"gaur-city": "Gaur City Noida",
+"indirapuram": "Indirapuram Ghaziabad",
+"vaishali": "Vaishali Ghaziabad",
+"vasundhara": "Vasundhara Ghaziabad",
+"raj-nagar": "Raj Nagar Ghaziabad",
+"kaushambi": "Kaushambi Ghaziabad"
+};
+
+function loadLocation(){
+  const urlParams = new URLSearchParams(window.location.search);
+  let loc = urlParams.get('area') || 'malviya-nagar';
+  let locName = locations[loc] || loc.replace(/-/g, ' ');
+
+  document.getElementById('seo-title').innerText = `Chimney Repair in ${locName} - Suction Sound Oil Leakage Fix @399 | 30 Min`;
+  document.getElementById('seo-desc').setAttribute('content', `No.1 Chimney Repair in ${locName}. Faber, Elica, Hindware, Glen repair. Oil leakage, sound, suction problem fix in 30 min @399. Call Now.`);
+  document.getElementById('seo-key').setAttribute('content', `chimney repair ${locName}, faber chimney repair ${locName}, elica chimney repair ${locName}, chimney repair service ${locName}`);
+  document.getElementById('main-h1').innerText = `Chimney Repair in ${locName}`;
+  document.getElementById('loc-name').innerText = locName;
+  document.getElementById('nearby').innerText = `We also repair in nearby ${locName} - 15 min reach`;
+}
+</script>
+<style>
+body{margin:0;background:#050a12;color:white;font-family:Arial;text-align:center}
+.header{padding:20px;background:black;border-bottom:2px solid red}
+h1{color:#ff3333;text-shadow:0 0 15px red;padding:20px}
+.box{background:#0f172a;margin:15px;padding:20px;border-radius:15px;border:1px solid #ff3333}
+.btn{background:#ff3333;color:white;padding:15px 30px;border-radius:30px;font-weight:bold;box-shadow:0 0 20px red;border:none}
+.tag{background:#111827;border:1px solid #334155;padding:5px 10px;border-radius:15px;display:inline-block;margin:3px;font-size:12px}
+</style>
+</head>
+<body onload="loadLocation()">
+
+<div class="header">
+<b style="color:red">🔧 CHIMNEY REPAIR EXPERT</b>
+</div>
+
+<h1 id="main-h1">Loading...</h1>
+<p>Repair Specialist for <b id="loc-name"></b> - 30 Min Service</p>
+
+<div class="box">
+<h3 style="color:red">Common Problems We Fix @399:</h3>
+<p>✅ Suction Kam Ho Gaya | ✅ Bahut Awaz Aa Rahi | ✅ Tel Tapak Raha | ✅ Button Kaam Nahi Kar Raha | ✅ Light Kharab | ✅ Auto Clean Fail</p>
+</div>
+
+<div class="box">
+<h3 id="nearby" style="color:cyan"></h3>
+<p>South Delhi Posh + All Noida + All Ghaziabad Full Cover</p>
+</div>
+
+<a href="tel:9876543210"><button class="btn">📞 REPAIR BOOK KARO - 9876543210</button></a>
+
+<br><br>
+<div style="padding:15px">
+<span class="tag"><a href="?area=malviya-nagar" style="color:white;text-decoration:none">Malviya Nagar</a></span>
+<span class="tag"><a href="?area=gk1" style="color:white;text-decoration:none">GK1</a></span>
+<span class="tag"><a href="?area=noida-sec-18" style="color:white;text-decoration:none">Noida 18</a></span>
+<span class="tag"><a href="?area=noida-sec-50" style="color:white;text-decoration:none">Noida 50</a></span>
+<span class="tag"><a href="?area=indirapuram" style="color:white;text-decoration:none">Indirapuram</a></span>
+<span class="tag"><a href="?area=vaishali" style="color:white;text-decoration:none">Vaishali</a></span>
+</div>
+
+<br><a href="index.html" style="color:cyan">← Home</a> | <a href="chimney-service.html" style="color:cyan">Service Page</a> | <a href="areas.html" style="color:cyan">All Areas</a>
+
+</body>
+</html>
