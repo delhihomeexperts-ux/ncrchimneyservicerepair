@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="t">Loading...</title>
+<meta name="description" id="d" content="Chimney Cleaning">
+<script>
+const locs={"malviya-nagar":"Malviya Nagar","gk1":"GK-1","gk2":"GK-2","defence-colony":"Defence Colony","saket":"Saket","vasant-kunj":"Vasant Kunj","noida-sec-18":"Noida Sec 18","noida-sec-50":"Noida Sec 50","noida-sec-150":"Noida Sec 150","gaur-city":"Gaur City","indirapuram":"Indirapuram","vaishali":"Vaishali","raj-nagar":"Raj Nagar","kaushambi":"Kaushambi"};
+function load(){
+let a=new URLSearchParams(window.location.search).get('area')||'malviya-nagar';
+let n=locs[a]||a.replace(/-/g,' ');
+document.getElementById('t').innerText=`Chimney Cleaning in ${n} - Deep Chemical Wash @499 | 30 Min`;
+document.getElementById('d').setAttribute('content',`Best Chimney Cleaning in ${n}. Oil, Grease, Carbon Deep Cleaning @499.`);
+document.getElementById('h').innerText=`Chimney Cleaning in ${n}`;
+document.getElementById('l').innerText=n;
+}
+</script>
+<style>body{margin:0;background:#050a12;color:white;font-family:Arial;text-align:center}.box{background:#0f172a;margin:15px;padding:20px;border-radius:15px;border:1px solid #00ff88}h1{color:#00ff88;text-shadow:0 0 15px #00ff88}.btn{background:#00ff88;color:black;padding:15px 30px;border-radius:30px;font-weight:bold;border:none;box-shadow:0 0 20px #00ff88}</style>
+</head>
+<body onload="load()">
+<h1 id="h">Loading...</h1>
+<p>Deep Cleaning in <b id="l"></b> - Kitchen Chamka Denge</p>
+<div class="box">
+<p>✅ Chemical Wash | ✅ Steam Cleaning | ✅ Oil & Grease Remove | ✅ Filter Deep Clean | ✅ Motor Cleaning</p>
+<p><b>Starting @499 Only</b></p>
+</div>
+<a href="tel:9876543210"><button class="btn">📞 CLEANING BOOK KARO</button></a>
+<br><br>
+<a href="?area=malviya-nagar" style="color:#00ff88;margin:5px">Malviya Nagar</a>
+<a href="?area=gk1" style="color:#00ff88;margin:5px">GK1</a>
+<a href="?area=noida-sec-18" style="color:#00ff88;margin:5px">Noida 18</a>
+<a href="?area=indirapuram" style="color:#00ff88;margin:5px">Indirapuram</a>
+<br><br><a href="index.html" style="color:cyan">← Home</a>
+</body>
+</html>
