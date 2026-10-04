@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="t">Brand Chimney Service</title>
+<meta name="description" id="d" content="Brand Chimney Service">
+<meta name="keywords" id="k" content="chimney service">
+<script>
+const brands={"faber":"Faber","elica":"Elica","hindware":"Hindware","glen":"Glen","kaff":"Kaff","sunflame":"Sunflame","kutchina":"Kutchina","bosch":"Bosch","blowhot":"BlowHot","siemens":"Siemens"};
+const locs={
+"gk1":"GK-1 South Delhi","gk2":"GK-2 South Delhi","defence-colony":"Defence Colony South Delhi","vasant-vihar":"Vasant Vihar South Delhi","vasant-kunj":"Vasant Kunj South Delhi","saket":"Saket South Delhi","malviya-nagar":"Malviya Nagar South Delhi","panchsheel-park":"Panchsheel Park South Delhi","green-park":"Green Park South Delhi","hauz-khas":"Hauz Khas South Delhi","gulmohar-park":"Gulmohar Park South Delhi","jor-bagh":"Jor Bagh South Delhi","new-friends-colony":"New Friends Colony South Delhi","chattarpur":"Chattarpur South Delhi","lajpat-nagar":"Lajpat Nagar South Delhi","cr-park":"CR Park South Delhi","kalkaji":"Kalkaji South Delhi","sarita-vihar":"Sarita Vihar South Delhi",
+"noida-sec-18":"Noida Sector 18","noida-sec-19":"Noida Sector 19","noida-sec-27":"Noida Sector 27 Atta","noida-sec-50":"Noida Sector 50","noida-sec-51":"Noida Sector 51","noida-sec-62":"Noida Sector 62","noida-sec-63":"Noida Sector 63","noida-sec-75":"Noida Sector 75","noida-sec-76":"Noida Sector 76","noida-sec-78":"Noida Sector 78","noida-sec-100":"Noida Sector 100","noida-sec-110":"Noida Sector 110","noida-sec-120":"Noida Sector 120","noida-sec-128":"Noida Sector 128 Jaypee","noida-sec-150":"Noida Sector 150","noida-sec-168":"Noida Sector 168","botanical-garden":"Botanical Garden Noida","gaur-city":"Gaur City Noida","noida-extension":"Noida Extension","greater-noida":"Greater Noida",
+"indirapuram":"Indirapuram Ghaziabad","vaishali":"Vaishali Ghaziabad","kaushambi":"Kaushambi Ghaziabad","vasundhara":"Vasundhara Ghaziabad","crossings-republik":"Crossings Republik Ghaziabad","raj-nagar":"Raj Nagar Ghaziabad","raj-nagar-ext":"Raj Nagar Extension Ghaziabad","kavi-nagar":"Kavi Nagar Ghaziabad","shastri-nagar":"Shastri Nagar Ghaziabad","govindpuram":"Govindpuram Ghaziabad","mohan-nagar":"Mohan Nagar Ghaziabad","loni":"Loni Ghaziabad"
+};
+function load(){
+let p=new URLSearchParams(window.location.search);
+let b=p.get('brand')||'faber';
+let a=p.get('area')||'gk1';
+let bName=brands[b]||b;
+let lName=locs[a]||a.replace(/-/g,' ');
+document.getElementById('t').innerText=`${bName} Chimney Service in ${lName} - Repair @399 | 30 Min`;
+document.getElementById('d').setAttribute('content',`Best ${bName} Chimney Service in ${lName}. South Delhi Posh + All Noida + All Ghaziabad. 30 Min @399.`);
+document.getElementById('k').setAttribute('content',`${b} chimney repair ${lName}, ${b} chimney service ${lName}, ${bName} chimney service centre ${lName}`);
+document.getElementById('h').innerText=`${bName} Chimney Service in ${lName}`;
+document.getElementById('b1').innerText=bName;
+document.getElementById('l1').innerText=lName;
+}
+</script>
+<style>body{margin:0;background:black;color:white;font-family:Arial;text-align:center}h1{color:gold;text-shadow:0 0 15px gold}.box{background:#0f172a;margin:12px;padding:15px;border-radius:12px;border:1px solid gold}.btn{background:gold;color:black;padding:14px 28px;border-radius:30px;font-weight:bold}</style>
+</head>
+<body onload="load()">
+<h1 id="h">Loading...</h1>
+<p><b id="b1"></b> Expert in <b id="l1"></b> - 30 Min Service</p>
+<div class="box"><p>✅ South Delhi Posh FULL + ✅ Noida SARE Sec + ✅ Ghaziabad SARE Areas Cover</p><p>Repair @399 | Cleaning @499</p></div>
+<a href="tel:9876543210"><button class="btn">CALL 9876543210</button></a>
+<br><br><a href="index.html" style="color:cyan">Home</a>
+</body>
+</html>
